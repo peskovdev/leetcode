@@ -1,11 +1,10 @@
 # LeetCode
 
-[My leetcode profile](https://leetcode.com/peskovdev/)
+[My LeetCode Account](https://leetcode.com/peskovdev/)
 
 
-### Solved Problems:
-| Level  | Number | Beats                  |
-|--------|--------|------------------------|
-| Easy   | 10     | 31%                    |
-| Medium | 0      | Not enough data yet ^^ |
-| Hard   | 0      | Not enough data yet ^^ |
+### My Stats:
+[![peskovdev's LeetCode stats](https://leetcode-stats-six.vercel.app/?username=peskovdev)](https://github.com/KnlnKS/leetcode-stats)
+
+<!-- black theme -->
+<!-- [![peskovdev's LeetCode stats](https://leetcode-stats-six.vercel.app/?username=peskovdev&theme=dark)](https://github.com/KnlnKS/leetcode-stats) -->
