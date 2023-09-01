@@ -1,10 +1,14 @@
-from typing import Counter, DefaultDict
+from typing import DefaultDict
 
 
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        hashdict = DefaultDict(list)  # {tuple_formated_hashdict: [str1, str2, str3]}
+        res = DefaultDict(list)  # {list_counter: [str1, str2, str3]}
         for s in strs:
-            hashdict[tuple(sorted(Counter(s).items()))].append(s)
+            counter = [0] * 26  # a ... z
+            for char in s:
+                counter[ord(char) - ord("a")] += 1
 
-        return list(hashdict.values())
+            res[tuple(counter)].append(s)
+
+        return list(res.values())
