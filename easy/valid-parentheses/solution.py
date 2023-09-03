@@ -1,22 +1,18 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        skobki_counter = []
+        stack: list[str] = []
+        bracket_pairs = {
+            "]": "[",
+            ")": "(",
+            "}": "{",
+        }
 
-        for skobka in s:
-            if skobka == "{" or skobka == "[" or skobka == "(":
-                skobki_counter.append(skobka)
-                continue
-            if len(skobki_counter) == 0:
-                print(skobki_counter)
-                return False
-            if skobka == "}":
-                if skobki_counter[-1] != "{":
+        for c in s:
+            if c in bracket_pairs:  # keys of hashmap is closing bracket
+                if len(stack) == 0:
                     return False
-            elif skobka == "]":
-                if skobki_counter[-1] != "[":
+                if bracket_pairs[c] != stack.pop():
                     return False
-            elif skobka == ")":
-                if skobki_counter[-1] != "(":
-                    return False
-            skobki_counter.pop()
-        return len(skobki_counter) == 0
+            else:
+                stack.append(c)
+        return len(stack) == 0
