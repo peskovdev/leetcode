@@ -2,19 +2,18 @@ class Solution:
     def evalRPN(self, tokens: list[str]) -> int:
         numstack: list = []
         operations = {
-            "+": lambda x, y: int(x) + int(y),
-            "-": lambda x, y: int(x) - int(y),
-            "*": lambda x, y: int(x) * int(y),
-            "/": lambda x, y: int(int(x) / int(y)),
+            "+": lambda x, y: x + y,
+            "-": lambda x, y: x - y,
+            "*": lambda x, y: x * y,
+            "/": lambda x, y: int(x / y),
         }
 
         for t in tokens:
             if t in operations:
                 operation = operations[t]
-                right_number = numstack.pop()
-                left_number = numstack.pop()
-                numstack.append(operation(left_number, right_number))
+                b, a = numstack.pop(), numstack.pop()
+                numstack.append(operation(a, b))
             else:
-                numstack.append(t)
+                numstack.append(int(t))
 
-        return int(numstack[-1])
+        return numstack[-1]
