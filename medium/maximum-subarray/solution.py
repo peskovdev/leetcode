@@ -1,17 +1,13 @@
 class Solution:
     def maxSubArray(self, nums: list[int]) -> int:
-        current_sum = 0
-        max_sum = 0
-        for el in nums:
-            if current_sum + el <= 0:
-                current_sum = 0
-            else:
-                current_sum += el
-                if max_sum < current_sum:
-                    max_sum = current_sum
-        if max_sum <= 0:
-            return max(nums)
-        return max_sum
+        res = nums[0]
+        cur = 0
+        for val in nums:
+            cur += val
+            res = max(res, cur)
+            if cur < 0:
+                cur = 0
+        return res
 
 
 sol = Solution()
