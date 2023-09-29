@@ -5,7 +5,7 @@
 
 ### My Stats:
 <a href="https://leetcode.com/peskovdev/">
-  <img src="https://leetcode-stats-six.vercel.app/?username=peskovdev" alt="peskovdev's LeetCode stats" width="80%">
+  <img src="https://leetcode-stats-six.vercel.app/?username=peskovdev" alt="peskovdev's LeetCode stats" width="70%">
 </a>
 
 <!-- If you would like to have the same dynamically generated LeetCode stats -->
