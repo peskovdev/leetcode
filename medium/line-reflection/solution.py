@@ -1,21 +1,20 @@
 class Solution:
-    """
-    @param points: n points on a 2D plane
-    @return: if there is such a line parallel to y-axis that reflect the given points
-    """
-
     def is_reflected(self, points: list[list[int]]) -> bool:
         if not points:
             return True
 
-        points.sort(key=lambda point: point[0])  # by x
+        original = set([tuple(p) for p in points])
+        mx = max(original, key=lambda point: point[0])[0]
+        mn = min(original, key=lambda point: point[0])[0]
+        median = mn + (mx - mn) / 2
 
-        middle = points[0][0] + (points[-1][0] - points[0][0]) / 2
-        lp, rp = 0, len(points) - 1
-        while lp < rp:
-            left, right = points[lp], points[rp]
-            if left[1] != right[1] or (middle - left[0]) != (right[0] - middle):
-                return False
-            lp += 1
-            rp -= 1
-        return points[lp][0] == middle if lp == rp else True
+        reflected = set()
+        for x, y in original:
+            distance = abs(median - x)
+            if x > median:
+                x -= distance * 2
+            else:
+                x += distance * 2
+            reflected.add((x, y))
+
+        return original == reflected
