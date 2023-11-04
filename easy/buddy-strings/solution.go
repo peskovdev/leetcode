@@ -8,14 +8,16 @@ func buddyStrings(s string, goal string) bool {
 		tmp := make(map[rune]int)
 		for _, v := range s {
 			tmp[v]++
-			if tmp[v] >= 2 {return true}
+			if tmp[v] >= 2 {
+				return true
+			}
 		}
 	}
-   idx := []int{}
+	idx := []int{}
 	for i := 0; i < len(s); i++ {
 		if s[i] != goal[i] {
 			idx = append(idx, i)
 		}
 	}
-   return len(idx) == 2 && s[idx[0]] == goal[idx[1]] && s[idx[1]] == goal[idx[0]]
+	return len(idx) == 2 && s[idx[0]] == goal[idx[1]] && s[idx[1]] == goal[idx[0]]
 }
