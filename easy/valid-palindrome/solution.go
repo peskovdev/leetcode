@@ -5,20 +5,15 @@ import "unicode"
 func isPalindrome(s string) bool {
 	lp, rp := 0, len(s)-1
 	for lp < rp {
-		for lp < rp && !isAlNum(s[lp]) {
+		if !(unicode.IsNumber(rune(s[lp])) || unicode.IsLetter(rune(s[lp]))) {
 			lp++
-		}
-		for lp < rp && !isAlNum(s[rp]) {
+		} else if !(unicode.IsNumber(rune(s[rp])) || unicode.IsLetter(rune(s[rp]))) {
 			rp--
-		}
-		if unicode.ToLower(rune(s[lp])) != unicode.ToLower(rune(s[rp])) {
+		} else if unicode.ToLower(rune(s[lp])) != unicode.ToLower(rune(s[rp])) {
 			return false
+		} else {
+			lp, rp = lp+1, rp-1
 		}
-		lp, rp = lp+1, rp-1
 	}
 	return true
-}
-
-func isAlNum(r byte) bool {
-	return ('a' <= r && r <= 'z') || ('A' <= r && r <= 'Z') || ('0' <= r && r <= '9')
 }
