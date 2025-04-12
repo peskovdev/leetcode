@@ -4,7 +4,7 @@
 
 ---
 
-### Мои видосы по алгоритмами с обьяснениями
+### Мои видосы по алгоритмам с обьяснениями
 #### Dynamic Programming
 - ##### Maximal Square 
 [![Watch the video](https://img.youtube.com/vi/ok7S6ZIPODY/0.jpg)](https://www.youtube.com/watch?v=ok7S6ZIPODY)
