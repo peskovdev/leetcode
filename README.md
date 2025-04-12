@@ -2,6 +2,8 @@
 
 #### [My LeetCode Account](https://leetcode.com/peskovdev/)
 
+---
+
 ### Мои видосы по алгоритмами с обьяснениями
 #### Dynamic Programming
 - ##### Maximal Square 
