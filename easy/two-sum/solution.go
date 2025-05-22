@@ -1,13 +1,15 @@
 package main
 
 func twoSum(nums []int, target int) []int {
-	hashmap := make(map[int]int)
+	mp := map[int]int{}
+
 	for i, n := range nums {
-		if idx, ok := hashmap[target-n]; ok {
+		if idx, ok := mp[target-n]; ok {
 			return []int{idx, i}
-		} else {
-			hashmap[n] = i
 		}
+
+		mp[n] = i
 	}
+
 	return []int{-1, -1}
 }
