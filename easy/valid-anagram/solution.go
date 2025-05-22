@@ -1,18 +1,22 @@
 package main
 
 func isAnagram(s string, t string) bool {
-	count := make(map[rune]int)
-	for _, r := range s {
-		count[r]++
+	if len(s) != len(t) {
+		return false
 	}
-	for _, r := range t {
-		count[r]--
 
+	count := make(map[byte]int)
+
+	for i := range len(s) {
+		count[s[i]]++
+		count[t[i]]--
 	}
-	for _, freq := range count {
-		if freq != 0 {
+
+	for _, frequency := range count {
+		if frequency != 0 {
 			return false
 		}
 	}
+
 	return true
 }
