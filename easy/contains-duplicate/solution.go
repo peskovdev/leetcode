@@ -1,12 +1,10 @@
 package main
 
 func containsDuplicate(nums []int) bool {
-	hashset := make(map[int]bool)
+	set := map[int]struct{}{}
 	for _, n := range nums {
-		if _, ok := hashset[n]; ok {
-			return true
-		}
-		hashset[n] = true
+		set[n] = struct{}{}
 	}
-	return false
+
+	return len(set) != len(nums)
 }
